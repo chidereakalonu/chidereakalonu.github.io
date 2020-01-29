@@ -15,7 +15,10 @@
   transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+
+#myImg:hover {opacity: 0.7}
+
+
 
 /* The Modal (background) */
 .modal {
@@ -52,7 +55,23 @@
   height: 150px;
 }
 
+#caption2 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
 /* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
 .modal-content, #caption {
   animation-name: zoom;
   animation-duration: 0.6s;
@@ -81,12 +100,16 @@
   cursor: pointer;
 }
 
+
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
+ 
+ 
 }
+
 
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -101,8 +124,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="/w3images/avatar_smoke.jpg" style="width:100%">
+  
+  <!-- Avatar image in top left corner HIDDEN
+  <img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
+  
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
@@ -258,8 +283,32 @@ UN-COMMENT WHEN WE GET CLIENTS SO WE CAN SHOW OFF OUR PREVIOUS PAID WORK :D -->
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
 
+<!-- THE FREAKIN' HTML TAYLOR SWIFT MODAL IS HERE BELOW -->
+
+
+<img class="myImg" src="https://dazedimg-dazedgroup.netdna-ssl.com/1600/azure/dazed-prod/1210/4/1214170.jpg" alt="Halsey" style="width:100%">
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img02"></img>
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption2"></div>
+</div>
+
+
+
+
+
+
 <!-- Trigger the Modal -->
-<img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">
+
+<img id="myImg" src="https://i.pinimg.com/originals/82/ae/68/82ae68b93ad983aa6d8b1e6de6b495a2.jpg" alt="Taylor Swift" style="width:100%">
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -268,24 +317,24 @@ UN-COMMENT WHEN WE GET CLIENTS SO WE CAN SHOW OFF OUR PREVIOUS PAID WORK :D -->
   <span class="close">&times;</span>
 
   <!-- Modal Content (The Image) -->
-  <img class="modal-content" src="https://i.pinimg.com/originals/82/ae/68/82ae68b93ad983aa6d8b1e6de6b495a2.jpg" style="width:100%"></img>
+  <img class="modal-content" id="img01"></img>
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
   
-<!-- END HTML MODAL OF TAYLOR-->
+<!-- END TAYLOR SWIFT HTML MODAL -->
+<!--START HALSEY HTML MODAL BELOW -->
 
-</div>
-        <img src="/w3images/rocks.jpg" style="width:100%">
-        <img src="/w3images/sailboat.jpg" style="width:100%">
-      </div>
 
-      <div class="w3-half">
-        <img src="/w3images/underwater.jpg" style="width:100%">
-        <img src="/w3images/chef.jpg" style="width:100%">
-        <img src="/w3images/wedding.jpg" style="width:100%">
-        <img src="/w3images/p6.jpg" style="width:100%">
-      </div>
+
+<!--END HALSEY HTML MODAL-->
+
+
+
+
+
+
+
     <!-- End photo grid -->
     </div>
   <!-- End Portfolio Section -->
@@ -332,5 +381,33 @@ UN-COMMENT WHEN WE GET CLIENTS SO WE CAN SHOW OFF OUR PREVIOUS PAID WORK :D -->
 <!-- END PAGE CONTENT -->
 </div>
 
+<!--START JAVASCRIPT OF MODAL IMAGE BELOW -->
+
+<script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+
+
+</script>
 </body>
 </html>
